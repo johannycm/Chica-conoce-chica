@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chica Conoce Chica - Infografía</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 50%, #ffd699 100%);
+            color: #2d2d2d;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .header-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #7c3aed;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 0px rgba(255, 200, 0, 0.3);
+        }
+
+        .header-title span {
+            color: #ff6b9d;
+        }
+
+        .header-subtitle {
+            font-size: 1.4rem;
+            color: #ff6b9d;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .header-author {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .emoji-header {
+            font-size: 3rem;
+            margin: 15px 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* ===== SECCIONES ===== */
+        .section-wrapper {
+            position: relative;
+            margin-bottom: -30px;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-wrapper:nth-child(1) { animation-delay: 0.2s; }
+        .section-wrapper:nth-child(2) { animation-delay: 0.3s; }
+        .section-wrapper:nth-child(3) { animation-delay: 0.4s; }
+        .section-wrapper:nth-child(4) { animation-delay: 0.5s; }
+
+        .section {
+            background: linear-gradient(135deg, #7c3aed 0%, #9d4edd 100%);
+            padding: 50px 40px;
+            margin: 0 20px;
+            position: relative;
+            transform: skewY(-2deg);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            border-radius: 0px;
+            clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0 100%);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: skewY(-2deg) translateY(-5px);
+        }
+
+        .section-alt-1 {
+            background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
+        }
+
+        .section-alt-2 {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 100%);
+        }
+
+        .section-alt-3 {
+            background: linear-gradient(135deg, #ffc300 0%, #ffb81c 100%);
+        }
+
+        /* ===== CONTENIDO SECCIÓN ===== */
+        .section-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+            transform: skewY(2deg);
+        }
+
+        .section-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-number {
+            font-size: 5rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.3);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-text {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .section-text strong {
+            color: #ffff00;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-right {
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .character-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+            width: 100%;
+        }
+
+        .character-emoji {
+            font-size: 4rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .character-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .character-desc {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .icon-circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5.5rem;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2),
+                        inset 0 1px 20px rgba(255, 255, 255, 0.2);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .decorative-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .dot {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+        }
+
+        .dot-lg { width: 24px; height: 24px; }
+        .dot-md { width: 14px; height: 14px; }
+        .dot-sm { width: 8px; height: 8px; }
+
+        /* ===== CARDS PARA SECCIÓN 1 ===== */
+        .tropes-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            transform: skewY(2deg);
+        }
+
+        .trope-item {
+            background: rgba(255, 255, 255, 0.18);
+            border-left: 4px solid #ffff00;
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .trope-item strong {
+            color: #ffff00;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .trope-item p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.6;
+        }
+
+        /* ===== TABLA COMPARATIVA ===== */
+        .comparison-grid {
+            transform: skewY(2deg);
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .comparison-header {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 15px;
+            font-weight: 700;
+            color: white;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .comparison-cell {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 15px;
+            color: rgba(255, 255, 255, 0.95);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .comparison-cell.highlight {
+            background: rgba(255, 255, 0, 0.25);
+            color: #ffff00;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.2rem;
+            }
+
+            .section-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .section-right {
+                min-height: 200px;
+            }
+
+            .icon-circle {
+                width: 200px;
+                height: 200px;
+                font-size: 4rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .section-number {
+                font-size: 3rem;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 30px 20px;
+                margin: 0 10px;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            margin-top: 100px;
+            padding: 40px 20px;
+            color: #5a5a5a;
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer p {
+            margin-bottom: 8px;
+        }
+
+        .footer-emoji {
+            font-size: 1.5rem;
+            margin: 0 5px;
+        }
+
+        /* ===== FLORES DECORATIVAS ===== */
+        .flower {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .flower-1 { top: 5%; left: 5%; font-size: 4rem; }
+        .flower-2 { top: 15%; right: 8%; font-size: 3.5rem; }
+        .flower-3 { bottom: 10%; left: 10%; font-size: 3rem; }
+        .flower-4 { bottom: 20%; right: 5%; font-size: 3.5rem; }
+
+    </style>
+</head>
+<body>
+    <!-- DECORACIONES FLORALES DE FONDO -->
+    <div class="flower flower-1">🌼</div>
+    <div class="flower flower-2">🌸</div>
+    <div class="flower flower-3">💐</div>
+    <div class="flower flower-4">🌼</div>
+    
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1 class="header-title">Chica <span>Conoce</span> Chica</h1>
+            <div class="emoji-header">👩‍🦰👩‍🦱</div>
+            <p class="header-subtitle">El caos del amor (sin dramas de identidad)</p>
+            <p class="header-author">Rachael Lippincott & Alyson Derrick</p>
+        </div>
+
+        <!-- SECCIÓN 1: EL GANCHO -->
+        <div class="section-wrapper">
+            <div class="section">
+                <div class="section-content">
+                    <div class="section-left">
+                        <div class="section-number">1</div>
+                        <h2 class="section-title">El Gancho: Plan Maestro de Seducción</h2>
+                        <div class="tropes-container">
+                            <div class="trope-item">
+                                <strong>🎬 The "Hitch" Trope</strong>
+                                <p>Alex, la chica cool y experimentada, se ofrece a ayudar a Molly (la chica tímida y obsesiva) a enamorar a la chica de sus sueños. Lo que comienza como un "plan" se convierte en algo mucho más.</p>
+                            </div>
+                            <div class="trope-item">
+                                <strong>⚡ Enemies to Lovers (Ligero)</strong>
+                                <p>Empiezan cayéndose mal por prejuicios mutuos, pero terminan siendo el apoyo que la otra necesita. El viaje de amistad a amor es gradual, convincente y adictivo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-right">
+                        <div class="decorative-dots">
+                            <div class="dot dot-lg" style="top: 10%; right: 15%;"></div>
+                            <div class="dot dot-md" style="top: 30%; left: 10%;"></div>
+                            <div class="dot dot-sm" style="bottom: 20%; right: 25%;"></div>
+                            <div class="dot dot-lg" style="bottom: 15%; left: 20%;"></div>
+                        </div>
+                        <div class="icon-circle">💕</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: EL DIFERENCIAL -->
+        <div class="section-wrapper">
+            <div class="section section-alt-1">
+                <div class="section-content">
+                    <div class="section-left">
+                        <div class="section-number">2</div>
+                        <h2 class="section-title">El Diferencial: Normalización Total</h2>
+                        <p class="section-text">
+                            <strong>Identidad Consolidada:</strong> Ninguna de las protagonistas está sufriendo por ser gay, descubriéndolo, o saliendo del armario ante sus padres. Ya son out. El conflicto es completamente humano.
+                        </p>
+                        <p class="section-text">
+                            <strong>Conflicto Real:</strong> El libro trata sobre miedo al compromiso, ansiedad social, relación con las madres y el paso a la universidad. Es una historia de amor que da la casualidad de que es entre dos chicas.
+                        </p>
+                    </div>
+                    <div class="section-right">
+                        <div class="decorative-dots">
+                            <div class="dot dot-md" style="top: 15%; right: 20%;"></div>
+                            <div class="dot dot-lg" style="bottom: 25%; left: 15%;"></div>
+                            <div class="dot dot-sm" style="top: 50%; right: 10%;"></div>
+                        </div>
+                        <div class="icon-circle">✨</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: LAS PROTAGONISTAS -->
+        <div class="section-wrapper">
+            <div class="section section-alt-2">
+                <div class="section-content">
+                    <div class="section-left">
+                        <div class="section-number">3</div>
+                        <h2 class="section-title">Las Protagonistas: Dinámicas Opuestas</h2>
+                        <p class="section-text">
+                            La química entre estas dos es lo que hace adictivo el libro. Sus personalidades chocan, se complementan y eventualmente se enamoran.
+                        </p>
+                    </div>
+                    <div class="section-right">
+                        <div class="character-card">
+                            <span class="character-emoji">🎭</span>
+                            <p class="character-name">Alex Blackwood</p>
+                            <p class="character-desc">Caótica, coqueta, con miedo a profundizar. El alma de la fiesta que esconde vulnerabilidad.</p>
+                        </div>
+                        <div class="character-card">
+                            <span class="character-emoji">📋</span>
+                            <p class="character-name">Molly Parker</p>
+                            <p class="character-desc">Organizada, callada, con una lista para todo. La voz de la razón que aprende a soltar control.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 4: POR QUÉ ELEGIR ESTE -->
+        <div class="section-wrapper">
+            <div class="section section-alt-3">
+                <div class="section-content">
+                    <div class="section-left">
+                        <div class="section-number">4</div>
+                        <h2 class="section-title">¿Por Qué Elegir Este?</h2>
+                        <p class="section-text">
+                            Si están debatiendo entre varios libros queer, aquí están los argumentos ganadores:
+                        </p>
+                    </div>
+                    <div class="section-right">
+                        <div class="decorative-dots">
+                            <div class="dot dot-md" style="top: 10%; right: 20%;"></div>
+                            <div class="dot dot-lg" style="bottom: 20%; left: 15%;"></div>
+                            <div class="dot dot-sm" style="top: 50%; right: 15%;"></div>
+                        </div>
+                        <div class="icon-circle">🎬</div>
+                    </div>
+                </div>
+                
+                <div class="comparison-grid" style="transform: skewY(2deg); margin-top: 30px;">
+                    <div class="comparison-header">Razón</div>
+                    <div class="comparison-header" style="background: rgba(255, 255, 0, 0.3); color: #ffff00;">Chica Conoce Chica</div>
+                    <div class="comparison-header">Otros Libros Queer</div>
+
+                    <div class="comparison-cell"><strong>Angustia</strong></div>
+                    <div class="comparison-cell highlight">Cero angst - Pura diversión</div>
+                    <div class="comparison-cell">Drama intenso, emocional</div>
+
+                    <div class="comparison-cell"><strong>POV</strong></div>
+                    <div class="comparison-cell highlight">Dual POV - Ambas voces</div>
+                    <div class="comparison-cell">Single o limitado</div>
+
+                    <div class="comparison-cell"><strong>Vibe</strong></div>
+                    <div class="comparison-cell highlight">Rom-com 2000s (Julia Roberts style)</div>
+                    <div class="comparison-cell">Melancólico o intenso</div>
+
+                    <div class="comparison-cell"><strong>Identidad</strong></div>
+                    <div class="comparison-cell highlight">Ya están out - Conflicto real</div>
+                    <div class="comparison-cell">Coming of age / Salida del armario</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>
+                <span class="footer-emoji">👩‍🦰</span>
+                Una rom-com sáfica que hará sonreír a tu club de lectura
+                <span class="footer-emoji">👩‍🦱</span>
+            </p>
+            <p style="font-size: 0.85rem; margin-top: 12px; color: #888;">
+                Rachael Lippincott & Alyson Derrick • Literatura Sáfica • Rom-Com
+            </p>
+        </div>
+    </div>
+</body>
+</html>
